@@ -1,0 +1,26 @@
+﻿<Window x:Class="Demo.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:viewModels="clr-namespace:Demo.ViewModels"
+        Title="MyDotNetBin Demo"
+        WindowState="Maximized"
+        Width="800" Height="600">
+    
+    <Window.DataContext>
+        <viewModels:MainViewModel />
+    </Window.DataContext>
+    
+    <Grid>
+        
+        <WrapPanel Margin="10">
+            <WrapPanel.Resources>
+                <Style BasedOn="{StaticResource MainWindowButtonStyle}" TargetType="{x:Type Button}" />
+            </WrapPanel.Resources>
+            
+            <Button Content="XmlPersistor demo" Command="{Binding DemoXmlPersistorCommand}" />
+            <Button Content="Utility demo" Command="{Binding DemoUtilityCommand}" />
+            
+        </WrapPanel>
+        
+    </Grid>
+</Window>
